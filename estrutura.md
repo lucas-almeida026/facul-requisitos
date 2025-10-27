@@ -1,0 +1,10 @@
+# Definição da estrutura esperada:
+
+1. prefácio: definir os possíveis leitores do documento.
+2. introdução: descrever a necessidade para o sistema, descrever brevemente as funções do sistema e explicar como ele vai funcitonar com outros sistemas. deve também, descrever como o sistema atende os objetivos blobais de negócio ou estratégicos da organização que encomendou o software.
+3. glossário: definir os termos técnicos usados no documento. não se deve fazer suposições sobre a experiência do leitor com o domínio do problema.
+4. definição de requisitos do usuário: deve descrever os serviços fornecisos ao usuário. Os requisitos não funcionais do sistema também devem ser descritos nesta seção. Essa descrilão pode user uma linguagem natural, diagramas ou até outras notações compreensíveis para os cliente. anormas de produto e processo que devem ser sequidos têm de ser especificadas.
+5. arquitetura do sistema: descrever uma visão geral (alto nível) da arquitetura do sistema previsto, mostrando a distribuição de funções entre os componentes principais do sistema. Componentes de arquitetura que são reusados por outras partes do sistems devem ser destacados.
+6. especificação de requisitos do sistema: descrever em detalhes os requisitos funcionais e não funcionais. Aqui, deve-se fazer referência aos requisitos definidos na seção 4 (definição de requisitos do usuário) ustilizando-se dos mesmos identificadores únicos. Interfaces de integração com sistemas terceiros também podem ser definidas aqui.
+7. apêndices: deve fornecer informações detalhadas e específicas relacionadas à aplicação em desenvolvimento, descrição de hardware, bancos de dados, entre outros. Os requisitos de hardware definem as configurações mínimas necessárias para a instalação e operação do sistema. Requisitos de bancos de dados definem a organização lógica dos dados usados pelo sistema e os relacionamentos entre eles.
+8. índice remissivo: deve fornecer uma lista alfabética de tópicos abordados no documento, juntamente com as páginas onde esses tópicos podem ser encontrados.
