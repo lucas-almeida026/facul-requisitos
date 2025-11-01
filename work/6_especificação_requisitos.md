@@ -264,3 +264,208 @@ Este documento detalha os requisitos funcionais e não funcionais do sistema bet
 - O sistema pode permitir comunicação estruturada entre mentor e mentorado.
 - O sistema pode incluir treinamento básico para usuários mentores.
 - O sistema pode implementar avaliação da qualidade da mentoria oferecida.
+
+## Especificação de Requisitos Não Funcionais
+
+### Desempenho
+
+**#RNF01** - Tempo de Resposta do Sistema
+- O sistema deve processar interações de navegação em no máximo 0.3 segundos.
+- O sistema deve responder a ações de jogo (apostas, giros) em no máximo 0.5 segundos.
+- O sistema deve carregar telas principais em no máximo 1 segundo com cache ativo.
+- O sistema deve otimizar carregamento de imagens usando compressão adaptativa.
+- O sistema deve implementar lazy loading para conteúdo não crítico.
+
+**#RNF02** - Escalabilidade de Usuários Simultâneos
+- O sistema deve suportar 1000 usuários simultâneos sem degradação perceptível.
+- O sistema deve escalar horizontalmente até 5000 usuários com balanceamento de carga.
+- O sistema deve manter banco de dados distribuído para alta disponibilidade.
+- O sistema deve implementar cache Redis para sessões e dados frequentes.
+- O sistema deve monitorar métricas de performance em tempo real.
+
+**#RNF03** - Tempo de Inicialização da Aplicação
+- O sistema deve inicializar interface principal em no máximo 2 segundos.
+- O sistema deve carregar dados do usuário em no máximo 1.5 segundos.
+- O sistema deve implementar splash screen durante carregamento inicial.
+- O sistema deve usar cache local para acelerar inicializações subsequentes.
+- O sistema deve otimizar tamanho do bundle da aplicação para carregamento rápido.
+
+**#RNF04** - Compatibilidade com Conexões Lentas
+- O sistema deve funcionar adequadamente com conexão 3G (mínimo 1 Mbps).
+- O sistema deve implementar modo offline para jogos básicos.
+- O sistema deve sincronizar dados automaticamente quando conexão melhorar.
+- O sistema deve comprimir dados de rede para reduzir tráfego em 70%.
+- O sistema deve exibir indicadores visuais sobre qualidade da conexão.
+
+### Usabilidade
+
+**#RNF05** - Interface Intuitiva e Familiar
+- O sistema deve seguir padrões visuais de aplicativos de cassino populares.
+- O sistema deve usar cores vibrantes e animações atrativas similares aos jogos reais.
+- O sistema deve implementar feedback haptic em dispositivos compatíveis.
+- O sistema deve manter consistência visual entre diferentes módulos.
+- O sistema deve incluir tutorial interativo na primeira utilização.
+
+**#RNF06** - Acessibilidade para Deficiências Visuais
+- O sistema deve suportar leitores de tela padrão (TalkBack, VoiceOver).
+- O sistema deve implementar contraste mínimo de 4.5:1 conforme WCAG 2.1.
+- O sistema deve permitir ampliação de texto até 200% sem perda de funcionalidade.
+- O sistema deve incluir descrições alternativas para elementos visuais.
+- O sistema deve suportar navegação por teclado em dispositivos compatíveis.
+
+**#RNF07** - Compatibilidade com Dispositivos Pequenos
+- O sistema deve adaptar interface para telas de 4 polegadas (320x568px).
+- O sistema deve manter elementos tocáveis com mínimo 44x44px.
+- O sistema deve usar design responsivo para diferentes orientações.
+- O sistema deve priorizar informações críticas em telas pequenas.
+- O sistema deve implementar gestos de swipe para navegação eficiente.
+
+**#RNF08** - Navegação Simples e Intuitiva
+- O sistema deve limitar hierarquia de navegação a no máximo 3 níveis.
+- O sistema deve incluir breadcrumb visual para orientação do usuário.
+- O sistema deve implementar menu principal acessível de qualquer tela.
+- O sistema deve usar ícones universalmente reconhecíveis.
+- O sistema deve manter estado de navegação entre sessões.
+
+### Compatibilidade
+
+**#RNF09** - Suporte Android
+- O sistema deve funcionar em Android 7.0 (API level 24) ou superior.
+- O sistema deve suportar arquiteturas ARM64, ARMv7 e x86.
+- O sistema deve integrar com Google Play Services quando disponível.
+- O sistema deve seguir diretrizes do Material Design 3.
+- O sistema deve passar em testes de compatibilidade do Google Play Console.
+
+**#RNF10** - Suporte iOS
+- O sistema deve funcionar em iOS 12.0 ou superior.
+- O sistema deve suportar dispositivos iPhone 6s ou mais recentes.
+- O sistema deve seguir Human Interface Guidelines da Apple.
+- O sistema deve integrar com serviços nativos iOS (Keychain, Notifications).
+- O sistema deve passar em revisão da App Store sem rejeições.
+
+**#RNF11** - Adaptabilidade de Tela
+- O sistema deve detectar automaticamente densidade de pixels (DPI).
+- O sistema deve adaptar layout para orientações portrait e landscape.
+- O sistema deve suportar telas desde 4" até 12.9" (tablets).
+- O sistema deve implementar design fluido sem elementos fixos problemáticos.
+- O sistema deve testar compatibilidade em no mínimo 10 dispositivos diferentes.
+
+### Segurança e Privacidade
+
+**#RNF12** - Criptografia de Dados Pessoais
+- O sistema deve usar criptografia AES-256 para dados sensíveis em repouso.
+- O sistema deve implementar TLS 1.3 para comunicações de rede.
+- O sistema deve criptografar tokens de autenticação usando RS256.
+- O sistema deve implementar salt único para hash de senhas.
+- O sistema deve usar certificados SSL com validação estendida.
+
+**#RNF13** - Conformidade com LGPD
+- O sistema deve implementar consentimento explícito para coleta de dados.
+- O sistema deve permitir visualização de todos os dados coletados.
+- O sistema deve incluir funcionalidade de portabilidade de dados.
+- O sistema deve manter registro de consentimentos com timestamp.
+- O sistema deve implementar processo de exclusão de dados em até 30 dias.
+
+**#RNF14** - Exclusão Completa de Dados
+- O sistema deve remover dados do usuário de todos os servidores.
+- O sistema deve excluir backups contendo dados do usuário solicitante.
+- O sistema deve anonimizar dados estatísticos agregados.
+- O sistema deve confirmar exclusão por email dentro de 48 horas.
+- O sistema deve manter apenas logs legalmente necessários após exclusão.
+
+**#RNF15** - Autenticação Segura
+- O sistema deve implementar autenticação multifator opcional.
+- O sistema deve usar tokens JWT com expiração configurável.
+- O sistema deve implementar rate limiting para tentativas de login.
+- O sistema deve registrar tentativas de acesso suspeitas.
+- O sistema deve forçar logout em múltiplos dispositivos quando necessário.
+
+### Confiabilidade
+
+**#RNF16** - Disponibilidade do Sistema
+- O sistema deve manter disponibilidade de 99.5% considerando janelas de manutenção.
+- O sistema deve implementar redundância em múltiplas zonas geográficas.
+- O sistema deve executar health checks automatizados a cada 30 segundos.
+- O sistema deve implementar failover automático em caso de falhas.
+- O sistema deve notificar administradores sobre indisponibilidades em 2 minutos.
+
+**#RNF17** - Backup Automático de Dados
+- O sistema deve realizar backup incremental diário dos dados do usuário.
+- O sistema deve manter backups completos semanais por 12 semanas.
+- O sistema deve testar integridade dos backups automaticamente.
+- O sistema deve distribuir backups geograficamente para proteção.
+- O sistema deve permitir restauração de dados em no máximo 4 horas.
+
+**#RNF18** - Recuperação de Falhas
+- O sistema deve detectar falhas de componentes em no máximo 15 segundos.
+- O sistema deve reiniciar serviços com falha automaticamente.
+- O sistema deve manter estado da aplicação durante reinicializações.
+- O sistema deve implementar circuit breaker para serviços externos.
+- O sistema deve registrar todas as falhas para análise posterior.
+
+### Manutenibilidade
+
+**#RNF19** - Atualizações sem Perda de Dados
+- O sistema deve implementar versionamento de banco de dados com migração.
+- O sistema deve manter compatibilidade retroativa por pelo menos 2 versões.
+- O sistema deve testar migrações em ambiente de staging antes da produção.
+- O sistema deve permitir rollback de atualizações em caso de problemas.
+- O sistema deve sincronizar dados offline com nova versão após atualização.
+
+**#RNF20** - Sistema de Logs Detalhados
+- O sistema deve registrar todas as ações do usuário com timestamp preciso.
+- O sistema deve implementar níveis de log (DEBUG, INFO, WARN, ERROR).
+- O sistema deve usar formato estruturado (JSON) para facilitar análise.
+- O sistema deve implementar rotação de logs para evitar sobrecarga.
+- O sistema deve permitir busca e filtros avançados nos logs.
+
+**#RNF21** - Arquitetura Modular
+- O sistema deve implementar arquitetura baseada em microserviços independentes.
+- O sistema deve usar containers Docker para isolamento de componentes.
+- O sistema deve implementar APIs RESTful padronizadas entre módulos.
+- O sistema deve permitir atualizações independentes de cada módulo.
+- O sistema deve implementar testes unitários com cobertura mínima de 80%.
+
+### Portabilidade
+
+**#RNF22** - Funcionamento Offline
+- O sistema deve permitir simulação de jogos básicos sem conexão internet.
+- O sistema deve armazenar dados de sessão offline no dispositivo.
+- O sistema deve manter funcionalidades de monitoramento de tempo offline.
+- O sistema deve implementar cache inteligente de conteúdo crítico.
+- O sistema deve indicar claramente funcionalidades indisponíveis offline.
+
+**#RNF23** - Sincronização de Dados
+- O sistema deve detectar automaticamente retorno da conexão internet.
+- O sistema deve sincronizar dados offline com servidor em até 30 segundos.
+- O sistema deve resolver conflitos de sincronização priorizando dados mais recentes.
+- O sistema deve implementar retry automático com backoff exponencial.
+- O sistema deve notificar usuário sobre status da sincronização.
+
+**#RNF24** - Otimização de Espaço em Disco
+- O sistema deve ocupar no máximo 150MB após instalação inicial.
+- O sistema deve implementar limpeza automática de cache desnecessário.
+- O sistema deve comprimir assets visuais sem perda significativa de qualidade.
+- O sistema deve permitir download sob demanda de conteúdo adicional.
+- O sistema deve alertar usuário quando espaço disponível for insuficiente.
+
+## Interfaces de Integração com Sistemas Terceiros
+
+### Serviços de Email
+- **Integração com SendGrid**: Para envio de emails de recuperação de senha e relatórios.
+- **Backup com Amazon SES**: Serviço alternativo para garantir entrega de emails críticos.
+- **Templates responsivos**: Emails otimizados para visualização em dispositivos móveis.
+
+### Serviços de Autenticação Social
+- **Google OAuth 2.0**: Integração para login com contas Google seguindo padrões de segurança.
+- **Facebook Login API**: Autenticação alternativa mantendo conformidade com políticas de privacidade.
+
+### Serviços de Monitoramento e Analytics
+- **Google Analytics**: Análise de comportamento respeitando privacidade do usuário.
+- **Firebase Crashlytics**: Monitoramento de falhas e performance da aplicação.
+- **Sentry**: Sistema de tracking de erros com alertas em tempo real.
+
+### Serviços de Infraestrutura
+- **Google Cloud Platform**: Hospedagem principal com CDN global.
+- **Redis Cloud**: Cache distribuído para performance e escalabilidade.
+- **MySQL Cloud SQL**: Banco de dados gerenciado com backup automático.
