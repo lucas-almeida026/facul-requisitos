@@ -75,3 +75,6 @@ personas: pessoa adicta, parentes
 		- exemplo: notificações push com texto provocativo como "já gastou o dinheiro do leite do seu filho com aposta hoje?"
 		- recompensas por tempo sem jogar
 		- explicitar os custos associados ao vício em jogos de azar
+
+## funcionamento do aplicativo
+o objetico do aplicativo é atriar o público sensível ao vício em jogos de azar online se "camuflando" como mais um app, porém com o objetivo de reeducar o usuário usando técnicas de terapia cognitivo-comportamental baseadas em evidências científicas. Ao contrário do que geralmente se acredita informação não gera mudança de comportamento, todo mundo que tem algum tipo de vício sabe todas as informações sobre os malefícios do vício, mas isso não é suficiente, para mudar comportamente é necessário gerar "insight" (entendimento) e isso só é possível através da construção de uma experiência que leve o usuário a "cair a ficha" sobre o seu comportamento. O aplicativo irá criar uma experiência que leve o usuário a esse "insight".
